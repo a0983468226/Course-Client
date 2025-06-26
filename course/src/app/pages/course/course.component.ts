@@ -17,28 +17,15 @@ import { Table, TableModule } from "primeng/table";
 import { TagModule } from "primeng/tag";
 import { ToastModule } from "primeng/toast";
 import { ToggleButtonModule } from "primeng/togglebutton";
+import { ShareModule } from "../../share.module";
 
 @Component({
     selector: 'app-course',
+    standalone: true,
     templateUrl: './course.component.html',
     styleUrls: ['./course.component.scss'],
     imports: [
-        TableModule,
-        MultiSelectModule,
-        SelectModule,
-        InputIconModule,
-        TagModule,
-        InputTextModule,
-        SliderModule,
-        ProgressBarModule,
-        ToggleButtonModule,
-        ToastModule,
-        CommonModule,
-        FormsModule,
-        ButtonModule,
-        RatingModule,
-        RippleModule,
-        IconFieldModule
+       ShareModule
     ]
 })
 export class CourseComponent {

@@ -5,6 +5,10 @@ import { Injectable } from "@angular/core";
 export class SemestersService {
     constructor(private http: HttpClient) { }
 
+    getSemesters() {
+        return this.http.get(`/api/semesters`);
+    }
+    
     updateSemesters(params: any) {
         return this.http.put(`/api/semesters`, params);
     }

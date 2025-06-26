@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { CheckboxModule } from 'primeng/checkbox';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { RippleModule } from 'primeng/ripple';
+import { Router } from '@angular/router';
 import { AppFloatingConfigurator } from '../../layout/component/app.floatingconfigurator';
 import { AuthService } from '../../service/auth.service';
+import { ShareModule } from '../../share.module';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    imports: [ButtonModule, CheckboxModule, InputTextModule, PasswordModule, FormsModule, RouterModule, RippleModule, AppFloatingConfigurator]
+    imports: [AppFloatingConfigurator, ShareModule]
 })
 export class LoginComponent {
 

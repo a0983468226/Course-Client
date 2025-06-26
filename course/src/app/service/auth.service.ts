@@ -84,5 +84,7 @@ export class AuthService {
         const expiry = payload.exp;
         return (Math.floor(Date.now() / 1000)) > expiry;
     }
+
+    
 }
 

@@ -3,6 +3,8 @@ import { AppLayout } from './app/layout/component/app.layout';
 import { LoginComponent } from './app/pages/login/login.component';
 import { AuthGuard } from './app/service/auth.guard';
 import { CourseComponent } from './app/pages/course/course.component';
+import { UserComponent } from './app/pages/user/user.component';
+import { SemestersComponent } from './app/pages/semesters/semesters.component';
 
 export const appRoutes: Routes = [
     {
@@ -26,11 +28,11 @@ export const appRoutes: Routes = [
             },
             {
                 path: 'users/list',
-                component: CourseComponent
+                component: UserComponent
             },
             {
                 path: 'semesters/list',
-                component: CourseComponent
+                component: SemestersComponent
             },
             // 預設轉址
             {
