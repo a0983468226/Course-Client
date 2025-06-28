@@ -1,0 +1,58 @@
+<p-dialog [header]="title" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '560px' }"
+    [modal]="true" [closable]="false">
+    <div class="card flex flex-col gap-4">
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="username" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">帳號</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="username" type="text" pInputText [(ngModel)]="form.username" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">姓名</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="name" type="text" pInputText [(ngModel)]="form.name" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="email" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">信箱</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="email" type="text" pInputText [(ngModel)]="form.email" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <div class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">角色</div>
+            <div class="flex flex-col md:flex-row md:col-span-10 gap-4">
+                <div class="flex items-center">
+                    <p-radiobutton id="role1" name="role" value="ADMIN" [(ngModel)]="form.role" />
+                    <label for="role1" class="leading-none ml-2">管理員</label>
+                </div>
+                <div class="flex items-center">
+                    <p-radiobutton id="role2" name="role" value="TEACHER" [(ngModel)]="form.role" />
+                    <label for="role2" class="leading-none ml-2">教師</label>
+                </div>
+                <div class="flex items-center">
+                    <p-radiobutton id="role3" name="role" value="STUDENT" [(ngModel)]="form.role" />
+                    <label for="role3" class="leading-none ml-2">學生</label>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <div class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">狀態</div>
+            <div class="flex flex-col md:flex-row md:col-span-10 gap-4">
+                <div class="flex items-center">
+                    <p-radiobutton id="option1" name="option" value="0" [(ngModel)]="form.status" />
+                    <label for="option1" class="leading-none ml-2">停用</label>
+                </div>
+                <div class="flex items-center">
+                    <p-radiobutton id="option2" name="option" value="1" [(ngModel)]="form.status" />
+                    <label for="option2" class="leading-none ml-2">啟用</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton label="取消" class="p-button-text" (click)="onCancel()"></button>
+        <button pButton label="儲存" (click)="onSave()"></button>
+    </ng-template>
+
+</p-dialog>

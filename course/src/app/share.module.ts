@@ -20,12 +20,13 @@ import { ToastModule } from "primeng/toast";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { DialogModule } from 'primeng/dialog';
 import { DatePickerModule } from 'primeng/datepicker';
+import { DialogService } from "./service/dialog.service";
+import { DialogComponent } from "./share/dialog/dialog.component";
 
 @NgModule({
     declarations: [],
-    imports: [
-
-    ],
+    imports: [],
+    providers: [],
     exports: [
         TableModule,
         MultiSelectModule,
@@ -43,8 +44,8 @@ import { DatePickerModule } from 'primeng/datepicker';
         RatingModule,
         RippleModule,
         IconFieldModule,
-        CheckboxModule, 
-        PasswordModule, 
+        CheckboxModule,
+        PasswordModule,
         RouterModule,
         DialogModule,
         DatePickerModule

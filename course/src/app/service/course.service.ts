@@ -10,6 +10,10 @@ export class CourseService {
         return this.http.get('/api/courses', {});
     }
 
+    getPaddingCoursesList() {
+        return this.http.get('/api/courses/padding', {});
+    }
+    
     getCourses() {
         return this.http.get('/api/courses/my', {});
     }

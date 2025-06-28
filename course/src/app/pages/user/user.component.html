@@ -71,7 +71,7 @@
                     <button pButton severity="info" label="編輯" class="p-button-outlined mb-2" icon="pi pi-pencil"
                         (click)="edit(item)"></button>
                     <button pButton severity="danger" label="刪除" class="p-button-outlined ms-1 mb-2" icon="pi pi-trash"
-                        (click)="delete(item)"></button>
+                        (click)="delete(item.id)"></button>
 
                 </td>
                 <td>
@@ -84,10 +84,11 @@
                     {{ item.email }}
                 </td>
                 <td>
-                    {{ item.role }}
+                    {{item?.role == 'ADMIN' ? '管理員' :
+                    item.role === 'teacher' ? '教師' : '學生'}}
                 </td>
                 <td>
-                    {{ item.status }}
+                    {{ item?.status == 1 ? '啟用' : '停用'}}
                 </td>
                 <td>
                     {{ item.lastLoginTime }}
@@ -106,3 +107,6 @@
         </ng-template>
     </p-table>
 </div>
+
+<app-user-dialog [(visible)]="showDialog" [title]="editData ? '編輯使用者' : '新增使用者'" [data]="editData"
+    (save)="onSaveUser($event)" />

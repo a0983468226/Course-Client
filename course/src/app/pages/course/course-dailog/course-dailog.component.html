@@ -1,0 +1,67 @@
+<p-dialog [header]="title" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '560px' }"
+    [modal]="true" [closable]="false">
+    <div class="card flex flex-col gap-4">
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="code" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">課程代碼</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="code" type="text" pInputText [(ngModel)]="form.code" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="name" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">課程名稱</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="name" type="text" pInputText [(ngModel)]="form.name" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="description" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">課程簡介</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="description" type="text" pInputText [(ngModel)]="form.description" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="credit" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">學分數</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="credit" type="number" pInputText [(ngModel)]="form.credit" />
+            </div>
+        </div>
+        <!-- <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">授課教授</label>
+            <div class="col-span-12 md:col-span-10">
+                <p-select [style]="{ width: '175px' }" [(ngModel)]="form.teacherId" [options]="teachers"
+                    optionLabel="name" optionValue="id"/>
+            </div>
+        </div> -->
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">學年度</label>
+            <div class="col-span-12 md:col-span-10">
+                <p-select [style]="{ width: '175px' }" [(ngModel)]="form.semesterId" [options]="semestersList"
+                    optionLabel="name" optionValue="id" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="schedule" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">上課時間</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="schedule" type="text" pInputText [(ngModel)]="form.schedule" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="location" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">上課地點</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="location" type="text" pInputText [(ngModel)]="form.location" />
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="capacity" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">上限人數</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="capacity" type="number" pInputText [(ngModel)]="form.capacity" />
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton label="取消" class="p-button-text" (click)="onCancel()"></button>
+        <button pButton label="儲存" (click)="onSave()"></button>
+    </ng-template>
+
+</p-dialog>

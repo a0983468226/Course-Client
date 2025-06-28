@@ -1,0 +1,34 @@
+<p-dialog [header]="title" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }"
+    [style]="{ width: '560px',height:'50%' }" [modal]="true" [closable]="false">
+    <div class="card flex flex-col gap-4">
+
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">名稱</label>
+            <div class="col-span-12 md:col-span-10">
+                <input id="name" type="text" pInputText [(ngModel)]="form.name" />
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="email3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">開始日期</label>
+            <div class="col-span-12 md:col-span-10">
+                <p-datepicker id="start" [(ngModel)]="form.startAt" [showIcon]="true" [showButtonBar]="true"
+                    dateFormat="yy-mm-dd"></p-datepicker>
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
+            <label for="email3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">結束日期</label>
+            <div class="col-span-12 md:col-span-10">
+                <p-datepicker id="end" [(ngModel)]="form.endAt" [showIcon]="true" [showButtonBar]="true"
+                    dateFormat="yy-mm-dd"></p-datepicker>
+            </div>
+        </div>
+
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton label="取消" class="p-button-text" (click)="onCancel()"></button>
+        <button pButton label="儲存" (click)="onSave()"></button>
+    </ng-template>
+
+</p-dialog>

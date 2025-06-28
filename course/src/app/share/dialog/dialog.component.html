@@ -1,0 +1,8 @@
+<p-dialog [(visible)]="visible" [modal]="true" [closable]="false" [header]="title" [style]="{width: '350px'}">
+    <p>{{ message }}</p>
+    <ng-template pTemplate="footer">
+        <button *ngIf="type === 'confirm'" pButton type="button" label="取消" (click)="cancel()"
+            class="p-button-text"></button>
+        <button pButton type="button" label="確定" (click)="confirm()" [ngClass]="buttonClass"></button>
+    </ng-template>
+</p-dialog>

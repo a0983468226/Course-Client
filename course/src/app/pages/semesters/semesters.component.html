@@ -53,7 +53,7 @@
                     <button pButton severity="info" label="編輯" class="p-button-outlined mb-2" icon="pi pi-pencil"
                         (click)="edit(item)"></button>
                     <button pButton severity="danger" label="刪除" class="p-button-outlined ms-1 mb-2" icon="pi pi-trash"
-                        (click)="delete(item)"></button>
+                        (click)="delete(item.id)"></button>
 
                 </td>
                 <td>
@@ -80,30 +80,5 @@
         </ng-template>
     </p-table>
 </div>
-
-<p-dialog header="新增學期" [(visible)]="display" [breakpoints]="{ '960px': '75vw' }"
-    [style]="{ width: '30%' ,height : '50vh' }" [modal]="true">
-    <div class="card flex flex-col gap-4">
-        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
-            <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">名稱</label>
-            <div class="col-span-12 md:col-span-10">
-                <input pInputText id="name3" type="text" />
-            </div>
-        </div>
-        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
-            <label for="email3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">開始日期</label>
-            <div class="col-span-12 md:col-span-10">
-                <p-datepicker [showIcon]="true" [showButtonBar]="true" [(ngModel)]="addStartAt"></p-datepicker>
-            </div>
-        </div>
-        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-2">
-            <label for="email3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">結束日期</label>
-            <div class="col-span-12 md:col-span-10">
-                <p-datepicker [showIcon]="true" [showButtonBar]="true" [(ngModel)]="addEndAt"></p-datepicker>
-            </div>
-        </div>
-    </div>
-    <ng-template #footer>
-        <p-button label="Save" (click)="close()" />
-    </ng-template>
-</p-dialog>
+<app-semester-dialog [(visible)]="showDialog" [title]="editData ? '編輯學期' : '新增學期'" [data]="editData"
+    (save)="onSaveSemester($event)" />
